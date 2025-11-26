@@ -1,3 +1,7 @@
+# Orchestrator Agent
+# This file manages workflow across all agents
+
+
 def orchestrate_pipeline(image_path):
     # Step 1: Detect crop
     crop_info = detect_crop_with_llm(image_path)
