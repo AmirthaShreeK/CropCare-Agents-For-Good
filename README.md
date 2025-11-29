@@ -44,7 +44,7 @@ cropcare-agents/
 │
 ├── docs/
 │   ├── architecture.md                   <-- Agent architecture diagrams + explanation
-│   └── performance_report.md             <-- Model performance summary
+│   
 │
 ├── .gitignore                            <-- Prevents unwanted files in repo
 ├── LICENSE                               <-- MIT license or Apache 2.0
