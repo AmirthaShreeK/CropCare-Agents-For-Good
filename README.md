@@ -31,8 +31,8 @@ cropcare-agents/
 ├── notebooks/
 │   └── CropCare_Agents_For_Good.ipynb    <-- MAIN NOTEBOOK 
 │
-├── images/
-│   └── sample_inputs/                    <-- few sample PlantVillage images
+├── image/                                <-- few sample PlantVillage images
+│                   
 │
 ├── src/
 │   ├── orchestrator.py                   <-- Full pipeline orchestrator
