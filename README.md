@@ -57,28 +57,180 @@ cropcare-agents/
 
 ## 🛠 Setup Instructions (Local)
 
-### 1️⃣ Create a virtual environment
+
+
+---
+
+## 🚀 How to Run
+
+Follow these simple steps to test **CropCare — Agents for Good** on your system:
+
+---
+
+### ✅ 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/AmirthaShreeK/CropCare-Agents-For-Good.git
+cd CropCare-Agents-For-Good
+```
+
+---
+
+### 🧩 2️⃣ Create & Activate Virtual Environment
+
+#### Windows (PowerShell)
+
+```powershell
+python -m venv venv
+venv\Scripts\activate
+```
+
+#### macOS / Linux
+
 ```bash
 python3 -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
-````
+source venv/bin/activate
+```
 
-### 2️⃣ Install dependencies
+---
+
+### 📦 3️⃣ Install Dependencies
 
 ```bash
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Run Notebook
+If Jupyter Notebook isn’t installed:
 
-Open:
+```bash
+pip install notebook
+```
+
+---
+
+### 📓 4️⃣ Open the Notebook
+
+```bash
+jupyter notebook
+```
+
+➡ In Jupyter, open:
 
 ```
 notebooks/CropCare_Agents_For_Good.ipynb
 ```
 
-➡️ Upload a plant leaf image from `images/sample_inputs/`
-➡️ Run all cells
+Run all cells **top to bottom**.
+
+---
+
+### 🔑 5️⃣ Setup Gemini API Key
+
+This application **requires a valid Google Gemini API Key**.
+
+#### Option A — Set as Environment Variable (Recommended)
+
+##### Windows (PowerShell)
+
+```powershell
+$env:GOOGLE_API_KEY="YOUR_API_KEY_HERE"
+```
+
+##### macOS / Linux
+
+```bash
+export GOOGLE_API_KEY="YOUR_API_KEY_HERE"
+```
+
+#### Option B — (If you don’t want to use Terminal)
+
+➡ In the **first code cell** of Jupyter Notebook, paste:
+
+```python
+import os
+os.environ["GOOGLE_API_KEY"] = "YOUR_API_KEY_HERE"
+print("🔐 API Key Loaded Successfully")
+```
+
+⚠️ Replace `"YOUR_API_KEY_HERE"` with the real key.
+
+---
+
+### 🖼️ 6️⃣ Provide a Plant Image
+
+Inside repository:
+
+```bash
+image/
+ ├── COLOR_APPLE_HEALTHY.jpg
+ ├── COLOR_CORN_MAIZE_Cercospora Leaf Spot.jpg
+ ├── GRAYSCALE_CHERRY_Powdery_mildew.jpg
+ ├── SEGMENTED_APPLE_APPLE SCAB.jpg
+```
+
+➡ When prompted in notebook, enter a path like:
+
+```
+..image/COLOR_APPLE_HEALTHY.jpg
+```
+
+> Ypu can also upload **their own leaf images** to \image to test detection.
+
+---
+
+## 🎯 What Happens Next?
+
+The Agent Pipeline will:
+1️⃣ Identify crop
+2️⃣ Detect the disease
+3️⃣ Generate treatment suggestions
+4️⃣ Provide preventive measures & risk factors
+
+---
+
+### 🎉 You’re All Set
+
+If all steps succeeded, you’ll see:
+✔ Crop recognized
+✔ Disease detected
+✔ Cure & recommendations displayed
+
+---
+
+### 🆘 Need Help?
+
+If any cell errors:
+
+* Re-check API key
+* Re-run kernel → *Restart & Run All*
+* Ensure a valid image path
+
+---
+
+
+
+### 🎯 Expected Output
+
+You will receive:
+
+* Detected crop name
+* Disease name (if any)
+* Severity category
+* Recommended treatment
+
+---
+
+
+
+---
+
+
+---
+
+
+
+
 
 ---
 
