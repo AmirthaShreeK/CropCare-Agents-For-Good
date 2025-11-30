@@ -219,14 +219,6 @@ You will receive:
 * Severity category
 * Recommended treatment
 
----
-
-
-
----
-
-
----
 
 
 
