@@ -17,7 +17,7 @@ The architecture ensures:
 
 ## 🧩 Agent-Oriented System Architecture
 
-### 🔹 Agent Pipeline Flow
+### 🔹 High-Level System Architecture
 
 ```mermaid
 flowchart TD
@@ -28,8 +28,8 @@ D --> E[Treatment Agent: Recommend Solutions]
 E --> F[Final JSON Output]
 ```
 
-Each agent uses a *specialized prompt* to ensure role clarity and accurate output.
-
+This diagram provides a top-view of how the user interacts with the CropCare multi-agent system.
+It shows the overall flow from image input to the final disease diagnosis and treatment output.
 ---
 
 ## 🧑‍💻 Agents Description
@@ -68,6 +68,8 @@ sequenceDiagram
 
     O ->> U: Final Agricultural Health Report
 ```
+This diagram illustrates the sequential operational flow across the Vision, Symptom, Disease, and Treatment agents.
+Each agent processes information, enriches the context, and passes output to the next stage until completion.
 
 ### 🔹 Internal Request–Response Data Flow
 
@@ -79,6 +81,8 @@ flowchart LR
     DiseaseAgent -->|Disease JSON| TreatmentAgent
     TreatmentAgent -->|Treatment JSON| Output[Unified Final Result]
 ```
+This diagram highlights the structured data exchange between agents and the orchestrator.
+It shows how detection results, symptoms, diagnosis, and treatments are formatted and transmitted as JSON objects.
 
 
 ## 📚 Dataset & Knowledge Base
