@@ -43,6 +43,43 @@ Each agent uses a *specialized prompt* to ensure role clarity and accurate outpu
 | **Orchestrator**    | Controls pipeline & JSON merging             | All previous outputs | Final response object                  | All agents    |
 
 ---
+### 🔹Agents-as-Services Pipeline Flow
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant O as Orchestrator
+    participant V as Vision Agent
+    participant S as Symptom Agent
+    participant D as Disease Agent
+    participant T as Treatment Agent
+
+    U ->> O: Upload Image
+    O ->> V: Detect Crop
+    V ->> O: {crop, confidence, alternatives}
+
+    O ->> S: Describe Symptoms
+    S ->> O: Symptom Summary
+
+    O ->> D: Diagnose Disease
+    D ->> O: {disease, confidence}
+
+    O ->> T: Recommend Treatment
+    T ->> O: Treatment Plan
+
+    O ->> U: Final Agricultural Health Report
+```
+
+### 🔹 Internal Request–Response Data Flow
+
+```mermaid
+flowchart LR
+    Image[Leaf Image] --> VisionAgent
+    VisionAgent -->|Crop JSON| SymptomAgent
+    SymptomAgent -->|Symptom Text| DiseaseAgent
+    DiseaseAgent -->|Disease JSON| TreatmentAgent
+    TreatmentAgent -->|Treatment JSON| Output[Unified Final Result]
+```
+
 
 ## 📚 Dataset & Knowledge Base
 
