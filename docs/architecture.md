@@ -247,9 +247,3 @@ Future upgrades:
 
 
 
-A) `docs/performance_report.md`
-B) All `src/*.py` files cleaned + ready
-C) README.md final professional version
-
-Just tell me:
-➡ **A**, **B**, **C** or **ALL**?
